@@ -17,4 +17,25 @@ else:
     print("The strings are not rotations of each other.")
 
 
-# QUESTION
+# QUESTION 4
+
+def first_non_repeated_character(string):
+    char_count = {}
+    for char in string:
+        if char in char_count:
+            char_count[char] += 1
+        else:
+            char_count[char] = 1
+    for char in string:
+        if char_count[char] == 1:
+            return char
+    return None
+
+string = input("Enter a string: ")
+
+result = first_non_repeated_character(string)
+
+if result is None:
+    print("There are no non-repeated characters in the string.")
+else:
+    print("The first non-repeated character in the string is:", result)
